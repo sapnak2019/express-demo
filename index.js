@@ -56,9 +56,9 @@ app.post('/api/courses', (req,res) => {
     if(result.error){
         return res.status(400).send(result.error.details[0].message);       
     }
-
-    const course = {
-        id: courses.length + 1,
+   
+    const course = {        
+        id: courses[courses.length-1].id + 1,
         name: req.body.name
     };
     courses.push(course);
