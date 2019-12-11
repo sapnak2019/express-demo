@@ -1,5 +1,5 @@
 function log(req,resp, next){
-    console.log("Authenticating");
+    console.log("Test Authenticating");
     next();
 }
 
