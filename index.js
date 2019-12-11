@@ -1,10 +1,20 @@
 const Joi = require('joi');
 
+const logger = require('./loggerMiddlewareFunction');
+                          
+
 const express = require('express');
 
 const app = express();
 
 app.use(express.json());
+
+app.use(function(req,resp, next){
+    console.log("Logging");
+    next();
+});
+
+app.use(logger);
 
 const courses = [
     { id:1, name: 'course1' },
